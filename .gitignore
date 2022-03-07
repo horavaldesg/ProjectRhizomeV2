@@ -24,7 +24,6 @@ ExportedObj/
 *.pdb
 *.opendb
 *.VC.db
-*.plastic
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
@@ -36,4 +35,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 .DS_Store
+*.plastic
 
