@@ -20,11 +20,20 @@ public class DiggScript : MonoBehaviour
     {
         if(collision.gameObject.layer == 7)
         {
-
+            StartCoroutine(WaitToDig());
             SpawnManager.ArtifactSpawner(collision.transform, col);
-            //col.enabled = false;
+            //col.enabled = false; 
+            collision.GetComponent<SpawnGround>().Spawn();
             Destroy(collision.gameObject);
-            
         }
+    }
+
+    private IEnumerator WaitToDig()
+    {
+        GetComponent<BoxCollider>().enabled = false;
+
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<BoxCollider>().enabled = true;
+
     }
 }
